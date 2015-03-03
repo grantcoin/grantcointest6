@@ -2296,6 +2296,24 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce   = 122894938;
         }
 
+        CBigNum bnTarget;
+        bnTarget.SetCompact(block.nBits);
+
+        while (block.GetHash() > bnTarget.getuint256())
+        {
+             if (block.nNonce % 1048576 == 0)
+                 printf("n=%dM hash=%s\n", block.nNonce / 1048576,
+                        block.GetHash().ToString().c_str());
+             block.nNonce++;
+        }
+
+        printf("Grantcoin Found Genesis Block:\n");
+        printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
+        printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
+        block.print();
+
+        printf("Grantcoin End Genesis Block\n");
+
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
