@@ -2274,7 +2274,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //   vMerkleTree: 4a5e1e
 
         // Genesis block
-        const char* pszTimestamp = "SFGate 27-FEB-2015 Net neutrality decision cheered by tech, decried by telecoms";
+        const char* pszTimestamp = "CSRwire 27-FEB-2015 Morgan Stanley Survey Finds Sustainable Investing Poised for Growth";
         CTransaction txNew;
         txNew.nTime = 1345083810;
         txNew.vin.resize(1);
@@ -2286,7 +2286,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1425014018;
+        block.nTime    = 1425365795;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = 2179302059u;
 
