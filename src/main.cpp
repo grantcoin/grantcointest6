@@ -2267,11 +2267,11 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis Block:
-        // CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-        //   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-        //   vMerkleTree: 4a5e1e
+        // CBlock(hash=0000000221dd5664d021, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=8d304ee1b1, nTime=1425365795, nBits=1d03ffff, nNonce=474164429, vtx=1, vchBlockSig=)
+        //   Coinbase(hash=8d304ee1b1, nTime=1425360528, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274c57435352776972652032372d4645422d32303135204d6f7267616e205374616e6c6579205375727665792046696e6473205375737461696e61626c6520496e76657374696e6720506f6973656420666f722047726f777468)
+        //     CTxOut(empty)
+        //   vMerkleTree: 8d304ee1b1
 
         // Genesis block
         const char* pszTimestamp = "CSRwire 27-FEB-2015 Morgan Stanley Survey Finds Sustainable Investing Poised for Growth";
@@ -2288,7 +2288,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1425365795;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 0;
+        block.nNonce   = 474164429;
 
         if (fTestNet)
         {
@@ -2296,31 +2296,31 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce   = 122894938;
         }
 
-        CBigNum bnTarget;
-        bnTarget.SetCompact(block.nBits);
+        // CBigNum bnTarget;
+        // bnTarget.SetCompact(block.nBits);
 
-        while (block.GetHash() > bnTarget.getuint256())
-        {
-             if (block.nNonce % 1048576 == 0)
-                 printf("n=%dM hash=%s\n", block.nNonce / 1048576,
-                        block.GetHash().ToString().c_str());
-             if (block.nNonce < 4294967295)
-                 block.nNonce++;
-             else
-             {
-                 block.nTime = GetAdjustedTime();
-                 printf("block nTime new value=%d\n", block.nTime);
-                 block.nNonce = 0;
-             }
-        }
+        // while (block.GetHash() > bnTarget.getuint256())
+        // {
+        //      if (block.nNonce % 1048576 == 0)
+        //          printf("n=%dM hash=%s\n", block.nNonce / 1048576,
+        //                 block.GetHash().ToString().c_str());
+        //      if (block.nNonce < 4294967295)
+        //          block.nNonce++;
+        //      else
+        //      {
+        //          block.nTime = GetAdjustedTime();
+        //          printf("block nTime new value=%d\n", block.nTime);
+        //          block.nNonce = 0;
+        //      }
+        // }
 
-        printf("Grantcoin Found Genesis Block:\n");
-        printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
-        printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
-        printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
-        block.print();
+        // printf("Grantcoin Found Genesis Block:\n");
+        // printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
+        // printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
+        // printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
+        // block.print();
 
-        printf("Grantcoin End Genesis Block\n");
+        // printf("Grantcoin End Genesis Block\n");
 
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
