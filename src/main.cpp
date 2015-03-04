@@ -2304,6 +2304,11 @@ bool LoadBlockIndex(bool fAllowNew)
              if (block.nNonce % 1048576 == 0)
                  printf("n=%dM hash=%s\n", block.nNonce / 1048576,
                         block.GetHash().ToString().c_str());
+             if (block.nNonce > 4294967294)
+             {
+                 block.nTime = GetAdjustedTime();
+                 block.nNonce = 0;
+             }
              block.nNonce++;
         }
 
