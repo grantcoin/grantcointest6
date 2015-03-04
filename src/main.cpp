@@ -2309,7 +2309,8 @@ bool LoadBlockIndex(bool fAllowNew)
              else
              {
                  block.nTime = GetAdjustedTime();
-                 printf("block nTime new value=%s\n", block.nTime.ToString().c_str());
+                 printf("block nTime new value=%d\n", block.nTime);
+                 printf("%s\n", block.nTime);
                  block.nNonce = 0;
              }
         }
@@ -2317,7 +2318,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("Grantcoin Found Genesis Block:\n");
         printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
         printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
-        printf("block nTime=%s\n", block.nTime.ToString().c_str());  // latest block.nTime from while loop
+        printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
         block.print();
 
         printf("Grantcoin End Genesis Block\n");
