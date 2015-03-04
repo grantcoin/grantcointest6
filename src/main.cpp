@@ -2315,6 +2315,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("Grantcoin Found Genesis Block:\n");
         printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
         printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
+        printf("block nTime=%s\n", block.nTime.ToString().c_str());  // latest block.nTime from while loop
         block.print();
 
         printf("Grantcoin End Genesis Block\n");
