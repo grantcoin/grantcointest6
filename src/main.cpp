@@ -2310,7 +2310,6 @@ bool LoadBlockIndex(bool fAllowNew)
              {
                  block.nTime = GetAdjustedTime();
                  printf("block nTime new value=%d\n", block.nTime);
-                 printf("%s\n", block.nTime);
                  block.nNonce = 0;
              }
         }
