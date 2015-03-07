@@ -878,7 +878,7 @@ int64 GetProofOfStakeReward(int64 nCoinAge)
     return nSubsidy;
 }
 
-static const int64 nTargetTimespan = 1512 * 60;  // 1512 minutes (25.2 hours)
+static const int64 nTargetTimespan = 24 * 60 * 60;  // 24 hours
 static const int64 nTargetSpacingWorkMax = 12 * STAKE_TARGET_SPACING; // 18 minutes
 
 //
@@ -892,9 +892,9 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     bnResult *= 2;
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
     {
-        // Maximum 200% adjustment per day...
+        // Maximum 200% adjustment per 3 hours
         bnResult *= 2;
-        nTime -= 24 * 60 * 60;
+        nTime -= 3 * 60 * 60;
     }
     if (bnResult > bnProofOfWorkLimit)
         bnResult = bnProofOfWorkLimit;
