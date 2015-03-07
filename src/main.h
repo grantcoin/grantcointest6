@@ -886,6 +886,7 @@ public:
     unsigned int nTime;
     unsigned int nBits;
     unsigned int nNonce;
+    int nHeight;
 
     // network and disk
     std::vector<CTransaction> vtx;
@@ -914,6 +915,7 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
+        READWRITE(nHeight);
 
         // ConnectBlock depends on vtx following header to generate CDiskTxPos
         if (!(nType & (SER_GETHASH|SER_BLOCKHEADERONLY)))
@@ -936,6 +938,7 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
+        nHeight = 0;
         vtx.clear();
         vchBlockSig.clear();
         vMerkleTree.clear();
