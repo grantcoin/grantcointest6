@@ -826,44 +826,30 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
     return pblockOrphan->hashPrevBlock;
 }
 
-int64 GetProofOfWorkReward(unsigned int nBits)
+int64 GetProofOfWorkReward(int nHeight)
 {
     int64 nSubsidy = 1 * COIN;
-    if (pindexBest->nHeight <= 100)
-	{
-		nSubsidy = 100000000 * COIN;  // Grantcoin created for planned distribution
-	}
-	else if (pindexBest->nHeight < 50000)
-	{
-		nSubsidy = 0 * COIN;  // No PoW reward while Grantcoin founders prepare launch announcement
-	}
-	else if (pindexBest->nHeight < 100000)
-	{
-		nSubsidy = 400 * COIN;
-	}
-	else if (pindexBest->nHeight < 150000)
-	{
-		nSubsidy = 200 * COIN;
-	}
-	else if (pindexBest->nHeight < 200000)
-	{
-		nSubsidy = 100 * COIN;
-	}
-	else if (pindexBest->nHeight < 250000)
-	{
-		nSubsidy = 50 * COIN;
-	}
-	else if (pindexBest->nHeight < 300000)
-	{
-		nSubsidy = 25 * COIN;
-	}
-	else if (pindexBest->nHeight >= 300000)
-	{
-		nSubsidy = 1 * COIN;  // PoW reward phased out to de minimus value
-	}
+    if (nHeight <= 100)
+        nSubsidy = 100000000 * COIN;  // Grantcoin created for planned distribution
+    else if (nHeight < 25000)
+        nSubsidy = 1 * COIN;  // Pre-launch testing by founders. Coins to be given away
+    else if (nHeight < 50000)
+        nSubsidy = 0 * COIN;  // No PoW reward during final launch preparation and up to 2 weeks post-launch 
+    else if (nHeight < 100000)
+        nSubsidy = 400 * COIN;
+    else if (nHeight < 150000)
+        nSubsidy = 200 * COIN;
+    else if (nHeight < 200000)
+        nSubsidy = 100 * COIN;
+    else if (nHeight < 250000)
+        nSubsidy = 50 * COIN;
+    else if (nHeight < 300000)
+        nSubsidy = 25 * COIN;
+    else if (nHeight >= 300000)
+        nSubsidy = 1 * COIN;  // PoW reward phased out to de minimus value
 
-    if (fDebug && GetBoolArg("-printcreation"))
-        printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
+    // if (fDebug && GetBoolArg("-printcreation"))
+    //     printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
 
     return nSubsidy;
 }
