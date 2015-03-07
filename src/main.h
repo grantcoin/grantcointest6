@@ -938,7 +938,6 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        nHeight = 0;
         vtx.clear();
         vchBlockSig.clear();
         vMerkleTree.clear();
