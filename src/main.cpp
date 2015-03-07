@@ -836,7 +836,7 @@ int64 GetProofOfWorkReward(int nHeight)
     else if (nHeight < 50000)
         nSubsidy = 0 * COIN;  // No PoW reward during final launch preparation and up to 2 weeks post-launch 
     else if (nHeight < 100000)
-        nSubsidy = 400 * COIN;  // Public mining begins.
+        nSubsidy = 400 * COIN;  // Public mining begins
     else if (nHeight < 150000)
         nSubsidy = 200 * COIN;
     else if (nHeight < 200000)
