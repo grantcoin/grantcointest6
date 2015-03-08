@@ -2253,7 +2253,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis Block:
-        // CBlock(hash=000000001fef62f3e289, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=945e3cfff2, nTime=1425765511, nBits=1d03ffff, nNonce=23347806, vtx=1, vchBlockSig=)
+        // CBlock(hash=000009041ae79141bac4, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=945e3cfff2, nTime=1425765511, nBits=1e0fffff, nNonce=435681, vtx=1, vchBlockSig=)
         //   Coinbase(hash=945e3cfff2, nTime=1425760183, ver=1, vin.size=1, vout.size=1, nLockTime=0)
         //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274c57435352776972652032372d4645422d32303135204d6f7267616e205374616e6c6579205375727665792046696e6473205375737461696e61626c6520496e76657374696e6720506f6973656420666f722047726f777468)
         //     CTxOut(empty)
@@ -2274,7 +2274,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = 1425765511;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 0;
+        block.nNonce   = 435681;
 
         if (fTestNet)
         {
@@ -2282,31 +2282,31 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce   = 122894938;
         }
 
-        CBigNum bnTarget;
-        bnTarget.SetCompact(block.nBits);
+        // CBigNum bnTarget;
+        // bnTarget.SetCompact(block.nBits);
 
-        while (block.GetHash() > bnTarget.getuint256())
-        {
-         if (block.nNonce % 1048576 == 0)
-             printf("n=%dM hash=%s\n", block.nNonce / 1048576,
-                  block.GetHash().ToString().c_str());
-         if (block.nNonce < 4294967295)
-             block.nNonce++;
-         else
-         {
-             block.nTime = GetAdjustedTime();
-             printf("block nTime new value=%d\n", block.nTime);
-             block.nNonce = 0;
-         }
-        }
+        // while (block.GetHash() > bnTarget.getuint256())
+        // {
+        //  if (block.nNonce % 1048576 == 0)
+        //      printf("n=%dM hash=%s\n", block.nNonce / 1048576,
+        //           block.GetHash().ToString().c_str());
+        //  if (block.nNonce < 4294967295)
+        //      block.nNonce++;
+        //  else
+        //  {
+        //      block.nTime = GetAdjustedTime();
+        //      printf("block nTime new value=%d\n", block.nTime);
+        //      block.nNonce = 0;
+        //  }
+        // }
 
-        printf("Grantcoin Found Genesis Block:\n");
-        printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
-        printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
-        printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
-        block.print();
+        // printf("Grantcoin Found Genesis Block:\n");
+        // printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
+        // printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
+        // printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
+        // block.print();
 
-        printf("Grantcoin End Genesis Block\n");
+        // printf("Grantcoin End Genesis Block\n");
 
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
