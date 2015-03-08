@@ -2253,11 +2253,11 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis Block:
-        // CBlock(hash=0000012461b758fc3f04, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=945e3cfff2, nTime=1425765511, nBits=1e03ffff, nNonce=3188346, vtx=1, vchBlockSig=)
-        //   Coinbase(hash=945e3cfff2, nTime=1425760183, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+        // CBlock(hash=0000000de041aba537c1, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=bb8ee86617, nTime=1425852347, nBits=1d0fffff, nNonce=545882558, vtx=1, vchBlockSig=)
+        //   Coinbase(hash=bb8ee86617, nTime=1425847518, ver=1, vin.size=1, vout.size=1, nLockTime=0)
         //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d020f274c57435352776972652032372d4645422d32303135204d6f7267616e205374616e6c6579205375727665792046696e6473205375737461696e61626c6520496e76657374696e6720506f6973656420666f722047726f777468)
         //     CTxOut(empty)
-        //   vMerkleTree: 945e3cfff2
+        //   vMerkleTree: bb8ee86617
 
         // Genesis block
         const char* pszTimestamp = "CSRwire 27-FEB-2015 Morgan Stanley Survey Finds Sustainable Investing Poised for Growth";
