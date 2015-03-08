@@ -828,7 +828,7 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 
 int64 GetProofOfWorkReward(int nHeight)
 {
-    int64 nSubsidy = 1 * COIN;
+    int64 nSubsidy = 0 * COIN;
     if (pindexBest->nHeight == 1)
         nSubsidy = 10000000000 * COIN;  // Grantcoin created for planned distribution
     else if (pindexBest->nHeight < 25000)
