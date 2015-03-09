@@ -826,7 +826,7 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
     return pblockOrphan->hashPrevBlock;
 }
 
-int64 static GetProofOfWorkReward(int nHeight)
+int64 GetProofOfWorkReward(int nHeight)
 {
     int64 nSubsidy = 0 * COIN;
     if (nHeight == 1)
