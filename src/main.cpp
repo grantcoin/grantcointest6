@@ -828,13 +828,11 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 
 int64 GetProofOfWorkReward(int nHeight)
 {
-    int64 nSubsidy = 0 * COIN;
+    int64 nSubsidy = COIN;
     if (nHeight == 1)
         nSubsidy = 10000000000 * COIN;  // Grantcoin created for planned distribution
-    else if (nHeight < 25000)
-        nSubsidy = 1 * COIN;  // Pre-launch testing by founders. Coins to be given away
     else if (nHeight < 50000)
-        nSubsidy = 0 * COIN;  // No PoW reward during final launch preparation and up to 2 weeks post-launch 
+        nSubsidy = CENT;  // De minimus reward pre-launch and up to 2 weeks post-launch
     else if (nHeight < 100000)
         nSubsidy = 400 * COIN;  // Public mining begins
     else if (nHeight < 150000)
@@ -846,7 +844,7 @@ int64 GetProofOfWorkReward(int nHeight)
     else if (nHeight < 300000)
         nSubsidy = 25 * COIN;
     else if (nHeight >= 300000)
-        nSubsidy = 1 * COIN;  // PoW reward phased out to de minimus value
+        nSubsidy = CENT;  // Reward phased out to de minimus value
 
     // if (fDebug && GetBoolArg("-printcreation"))
     //     printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%"PRI64d"\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
