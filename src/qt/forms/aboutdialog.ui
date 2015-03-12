@@ -88,6 +88,19 @@
      <item>
       <widget class="QLabel" name="label_grantcoin_copyright">
        <property name="text">
+        <string>Copyright © 2015 Grantcoin Developers</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_ppcoin_copyright">
+       <property name="text">
         <string>Copyright © 2011-2014 PPCoin Developers</string>
        </property>
        <property name="wordWrap">
