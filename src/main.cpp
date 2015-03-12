@@ -2281,37 +2281,37 @@ bool LoadBlockIndex(bool fAllowNew)
             block.nNonce   = 122894938;
         }
 
-        // CBigNum bnTarget;
-        // bnTarget.SetCompact(block.nBits);
+        CBigNum bnTarget;
+        bnTarget.SetCompact(block.nBits);
 
-        // while (block.GetHash() > bnTarget.getuint256())
-        // {
-        //     if (block.nNonce % 1048576 == 0)
-        //         printf("n=%dM hash=%s\n", block.nNonce / 1048576,
-        //             block.GetHash().ToString().c_str());
-        //     if (block.nNonce < 4294967295)
-        //         block.nNonce++;
-        //     else
-        //     {
-        //         block.nTime = GetAdjustedTime();
-        //         printf("block nTime new value=%d\n", block.nTime);
-        //         block.nNonce = 0;
-        //     }
-        // }
+        while (block.GetHash() > bnTarget.getuint256())
+        {
+         if (block.nNonce % 1048576 == 0)
+             printf("n=%dM hash=%s\n", block.nNonce / 1048576,
+                 block.GetHash().ToString().c_str());
+         if (block.nNonce < 4294967295)
+             block.nNonce++;
+         else
+         {
+             block.nTime = GetAdjustedTime();
+             printf("block nTime new value=%d\n", block.nTime);
+             block.nNonce = 0;
+         }
+        }
 
-        // printf("Grantcoin Found Genesis Block:\n");
-        // printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
-        // printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
-        // printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
-        // block.print();
+        printf("Grantcoin Found Genesis Block:\n");
+        printf("genesis hash=%s\n", block.GetHash().ToString().c_str());
+        printf("merkle root=%s\n", block.hashMerkleRoot.ToString().c_str());
+        printf("block nTime=%d\n", block.nTime);  // latest block.nTime from while loop
+        block.print();
 
-        // printf("Grantcoin End Genesis Block\n");
+        printf("Grantcoin End Genesis Block\n");
 
         //// debug print
         printf("%s\n", block.GetHash().ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xbb8ee866176addc0fcaa01c27b52ec6f81aec81dea9f2342854d2de2b1734065"));
+        assert(block.hashMerkleRoot == uint256("0x02ae8a89c0eebf40d815f4b87bf54ce518ba3c1e667bb82c388c32b6d1d6e355"));
         block.print();
         assert(block.GetHash() == hashGenesisBlock);
         assert(block.CheckBlock());
