@@ -27,8 +27,8 @@ Alternatively you can run windows command line (cmd) in grantcoin program dir.
   cd daemon
   grantcoind
 You would need to create a configuration file grantcoin.conf in the default
-wallet directory. Grant access to grantcoind/grantcoin-qt in anti-virus and firewall
-applications if necessary.
+wallet directory. Grant access to grantcoind/grantcoin-qt in anti-virus and
+firewall applications if necessary.
 
 The software automatically finds other nodes to connect to.  You can
 enable Universal Plug and Play (UPnP) with your router/firewall
