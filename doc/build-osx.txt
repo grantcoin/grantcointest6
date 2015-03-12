@@ -1,3 +1,4 @@
+Copyright (c) 2015 Grantcoin Developers
 Copyright (c) 2012-2013 PPCoin Developers
 Copyright (c) 2009-2012 Bitcoin Developers
 Distributed under the MIT/X11 software license, see the accompanying file
@@ -12,7 +13,7 @@ Mac OS X bitcoind build instructions
 Laszlo Hanyecz <solar@heliacal.net>
 Douglas Huff <dhuff@jrbobdobbs.org>
 
-Modified for Grantcoin by Jeff Larkin <jefflarkin@gmail.com>
+Modified for PPCoin by Jeff Larkin <jefflarkin@gmail.com>
 
 
 See readme-qt.rst for instructions on building Grantcoin QT, the
