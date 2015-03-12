@@ -1,6 +1,6 @@
-Grantcoin (Grantcoin) 0.4.0 BETA
+Grantcoin 0.1.0 BETA
 
-Copyright (c) 2011-2014 Grantcoin (Grantcoin) Developers
+Copyright (c) 2015 Grantcoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
 file license.txt or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in
@@ -10,10 +10,14 @@ cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 Intro
 -----
-Grantcoin is a free open source project derived from Bitcoin, with
-the goal of providing a long-term energy-efficient crypto-currency.
-Built on the foundation of Bitcoin, innovations such as proof-of-stake
-help further advance the field of crypto-currency.
+Grantcoin is a free open source project derived from Peercoin (PPCoin),
+with the goal of providing a long-term energy-efficient cryptocurrency
+which is primarily distributed by the Grantcoin Foundation, a legally
+incorporated nonprofit organization, as Proof-of-Participation grants to
+support and incentivize sustainable business around the world. Built on
+the technological foundations of Bitcoin and Peercoin, Grantcoin adds
+organizational innovation to make digital currency serve the cause of
+social and environmental responsibility and a fair distribution of wealth.
 
 
 Setup
@@ -31,21 +35,46 @@ incoming connections.  Grantcoin works without incoming connections,
 but allowing incoming connections helps the Grantcoin network.
 
 
+See the documentation at the Grantcoin website and GitHub:
+  http://www.grantcoin.org
+  http://github.com/grantcoin/grantcoin
+for help and more information.
+
+
+----------------------------
+Peercoin (PPCoin) 0.4.0 BETA
+
+Copyright (c) 2011-2014 Peercoin (PPCoin) Developers
+Distributed under the MIT/X11 software license, see the accompanying
+file license.txt or http://www.opensource.org/licenses/mit-license.php.
+This product includes software developed by the OpenSSL Project for use in
+the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
+cryptographic software written by Eric Young (eay@cryptsoft.com).
+
+
+Intro
+-----
+PPCoin is a free open source project derived from Bitcoin, with
+the goal of providing a long-term energy-efficient crypto-currency.
+Built on the foundation of Bitcoin, innovations such as proof-of-stake
+help further advance the field of crypto-currency.
+
+
 Upgrade
 -------
 All your existing coins/transactions should be intact with the upgrade.
 To upgrade from 0.3, first backup wallet
-grantcoind backupwallet <destination_backup_file>
-Then shutdown grantcoind by
-grantcoind stop
+ppcoind backupwallet <destination_backup_file>
+Then shutdown ppcoind by
+ppcoind stop
 Uninstall v0.3 client, download and install v0.4 client.
-Start up the new grantcoind (0.4.0).
+Start up the new ppcoind (0.4.0).
 If upgrade is performed after upgrade deadline then blockchain re-download
 is required.
 
 
 See the documentation/wiki at github:
-  http://github.com/grantcoin/grantcoin
+  http://github.com/ppcoin/ppcoin
 for help and more information.
 
 
